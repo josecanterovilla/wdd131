@@ -2,8 +2,9 @@ body, html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  
-   
+    font-family: "Roboto Condensed", serif;
+    font-weight: 500;
+    
 }
 
 p{
@@ -52,6 +53,8 @@ nav a {
     padding: 1rem;
     border-color: aqua;
     font-size: 30px;
+    font-family: "Roboto Condensed", serif;
+    font-weight: 700;
 }
 
 li a:hover {
@@ -62,7 +65,7 @@ li a:hover {
 
 main{
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 75% 25%;
     margin-top: 20px;
     padding: 20px;
     

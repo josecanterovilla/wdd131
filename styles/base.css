@@ -1,0 +1,139 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+p{
+    font-size: 11px;
+    margin: 5px;
+    text-align: justify;
+    padding: 5px;
+}
+
+.my-name{
+    color: aliceblue;
+}
+
+h1 {
+    background-color: rgba(20, 20, 66, 0.89);
+    text-align: center;
+    color: rgb(179, 184, 184);
+    padding: 1rem;
+    margin: 0 auto;
+
+}
+
+
+nav ul{
+    background-color: rgb(192, 128, 50);
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav li{
+    border-color: rgb(192, 128, 50);
+    justify-content: center;
+    flex: 1 1 100%
+}
+
+nav a {
+    display: block;
+    text-align: center; 
+    text-decoration: none;
+    padding: 1rem;
+    border-color: aqua;
+    font-size: 20px;
+}
+
+li a:hover {
+    border: 1px solid #754a4a;
+    border-radius: 10px;
+    color: #051b08;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    margin-top: 20px;
+}
+
+.card{
+    text-align: center;
+    border: 1px #bbbbbb solid;
+    margin: 5px;
+    border-radius: 5px;
+    vertical-align: middle;
+    
+    
+}
+
+h2{
+    margin-top: 0;
+    font-size: 20px;
+    background-color: #083d81;
+    padding: 1x;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #eeeeee;
+}
+
+.about-me{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    margin: 10px;
+
+}
+
+h3{
+    font-size: 15px;
+    padding-top: 10px;
+}
+.image-me {
+    width: 100px;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    border: #636363 solid 0.1px;
+}
+
+.chile-image{
+    height: 80px;
+    width: 100px;
+    align-content: left;
+    border-radius: 5px;
+}
+
+.my-country {
+    display: grid;
+    grid-template-columns: 0.5fr 5fr;
+}
+
+.web-div{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    justify-content: top;
+}
+
+
+.web-il {
+    margin-top: 15px;
+    font-size: 13px;
+    vertical-align: middle;
+
+}
+figure{
+    margin:0;
+    padding: 0;
+}
+
+
+figcaption{
+    font-size: 10px;
+    color: #4b4a4a;
+}

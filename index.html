@@ -1,11 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131</title>
+    <title>WDD 131 - Dynamic Web Fundamentals - José Cantero</title>
+    <meta name="WDD 131 - Dynamic Web Fundamentals - José Cantero" content="This is to show info about me">
+    <meta name="author" content="José Cantero">
+    <link rel="stylesheet" href="styles/base.css">
 </head>
 <body>
-    <h1>Wddd 131 - Blazzard</h1>
+    <header>
+        <h1>WDD 131 - Dynamic Web Fundamentals - <span class="my-name">José Cantero</span></h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/josecanterovilla/">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/1?lang=eng">Scripture</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="card">
+            <h2>About Me</h2>
+            <div class="about-me">
+                <div>
+                    <p>Hi, my name is José Cantero. I’m 29 years old, happily married to my wonderful wife, Isidora, who has been an incredible partner and support in my journey. I am also a proud father to our almost one-year-old son, Mateo, whose smile brightens my days and inspires me to be the best version of myself. I’m an Industrial Engineer currently working at a tannery, where I enjoy contributing to the production process and learning new skills. I feel truly happy and deeply grateful to be part of BYU-Pathway, as it’s an exciting opportunity not only to grow academically but also to develop spiritually and improve both personally and professionally.</p>
+                    <h3>Chillán, Chile</h3>
+                    <div class = "my-country">
+                        <figure>
+                            <img class="chile-image" src="images/flag-chile.webp" alt="Chile">
+                            <figcaption>Official Flag of Chile</figcaption>
+                        </figure>
+                        <p>Chile is a South American country stretching over 4,300 kilometers between the Andes and the Pacific Ocean. Known for its diverse geography, it boasts the Atacama Desert, fertile valleys, and Patagonia. Santiago, its capital, is the cultural and economic hub, and Chile is famous for its wines and warm hospitality.</p>
+                    </div>
+                </div>
+                <div>
+                    <img class="image-me" src="images/me.jpg" alt="me">
+
+                </div>
+            </div>
+            
+        </section>
+        <section class="card" class="card2">
+            <h2>Web Dev Resources</h2>
+            <div class="web-div">
+                <ul class="web-ul"> 
+                    <li class="web-il"><a href="https://www.dev.to/" target="_blank">Dev.to Community</a></li>
+                    <li class="web-il"><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a>
+                    <li class="web-il"><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+                    <li class="web-il"><a href="https://www.w3schools.com/" target="_blank">W3 Schools</a></li>
+                    <li class="web-il"><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+                    <li class="web-il"><a href=""target="_blank">Image Placeholder</a></li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© <span id="currentyear"></span> José Cantero - Chile</p>
+        <p><span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>

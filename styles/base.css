@@ -22,12 +22,12 @@ p{
 }
 
 .my-name{
-    color: rgb(5, 62, 90);
+    color: rgb(173, 221, 245);
     font-style: italic;
 }
 
 h1 {
-    background: linear-gradient(to bottom, #8d3e3e, #aacbcc);
+    background: linear-gradient(to bottom, #135b8b, #344849);
     text-align: center;
     color: rgb(0, 0, 0);
     padding: 1rem;
@@ -39,7 +39,7 @@ h1 {
 
 
 nav ul{
-    background: linear-gradient(to bottom, #4b898f, #ffffff);
+    background: linear-gradient(to bottom, #03becf, #ffffff);
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -161,15 +161,17 @@ figcaption{
 
 
 footer {
-    background: linear-gradient(to bottom, #0b7b88, #ffffff);
+    background: linear-gradient(to bottom, #2ac5d6, #282b49);
     text-align: center;
     justify-items: center;
     justify-content: center;
 }
 
 footer p{
-    color: #140c0c;
+    color: #1a1111;
     font-size: 14px;
+    margin: 0;
+    padding: 0;
     
 }
 

@@ -19,7 +19,7 @@
             color: #000;
             position: absolute; /* Usa posición relativa al contenedor */
             top: 1rem; /* Ajusta la distancia desde arriba */
-            right: 1rem; /* Ajusta la distancia desde la derecha */
+            right: 0.5rem; /* Ajusta la distancia desde la derecha */
             
         }
 
@@ -30,7 +30,6 @@
             content: "☰";
 
         }
-
 
         #menu.open::before {
             content: "X";

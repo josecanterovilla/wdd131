@@ -1,11 +1,11 @@
 
 
       /* Media query for desktops (1024px and above) */
-      @media (max-width: 1020px) {
+@media (max-width: 1020px) {
         .container {
             grid-template-columns: 1fr 1fr;
         }
-    }
+}
 
     /* Media query for tablets (768px and above) */
 @media (max-width: 768px) {

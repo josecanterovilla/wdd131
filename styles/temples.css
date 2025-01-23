@@ -1,3 +1,5 @@
+/* small view navigation */
+
 
 
       /* Media query for desktops (1024px and above) */
@@ -5,41 +7,136 @@
         .container {
             grid-template-columns: 1fr 1fr;
         }
+        /* small view navigation */
+        #menu {
+            font-size: 1.5rem;
+            border: 0;
+            background: none;
+            color: #000;
+            position: absolute; /* Usa posición relativa al contenedor */
+            top: 1rem; /* Ajusta la distancia desde arriba */
+            right: 1rem; /* Ajusta la distancia desde la derecha */
+            
+        }
+
+        button {
+            display: block;
+        }
+        #menu::before {
+            content: "☰";
+
+        }
+
+        #menu.open::before {
+            content: "X";
+            color: #bbb;
+            font-size: 50px;
+        }
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            list-style: none;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navigation a {
+            display: none;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+        }
+        .navigation a:hover {
+            background-color: #bbb;
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* when the button is clicked - the open class is toggled (added/removed) */
+        .open {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .open a {
+            display: block;
+        }
+
+        .open h1{
+            display: none;
+        }
+
+
+
 }
 
     /* Media query for tablets (768px and above) */
 @media (max-width: 768px) {
-    .container {
-          grid-template-columns: 1fr;
-    }
-    h1 {
-		font-size: 2.5rem;
-		margin-left: 0;
-		text-align: center;
-	}
-	
-	h2 {
-		font-size: 2rem;
-		text-align: center;
-	}
+        .container {
+            grid-template-columns: 1fr;
+        }
+        #menu {
+            font-size: 1.5rem;
+            border: 0;
+            background: none;
+            color: #000;
+            position: absolute; /* Usa posición relativa al contenedor */
+            top: 1rem; /* Ajusta la distancia desde arriba */
+            right: 1rem; /* Ajusta la distancia desde la derecha */
+            
+        }
 
-	#menu {
-		display: none; /* hide hamburger button */
-	}
+        button {
+            display: block;
+        }
+        #menu::before {
+            content: "☰";
 
-	.navigation {
-		flex-direction: row;
-	}
+        }
 
-	.navigation a {
-		display: block;
-		flex: 1 1 100%;
-	}
-	
-	.stuff {
-		margin: 1rem auto;
-	}
+        #menu.open::before {
+            content: "X";
+            color: #bbb;
+            font-size: 50px;
+        }
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            list-style: none;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navigation a {
+            display: none;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+        }
+        .navigation a:hover {
+            background-color: #bbb;
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* when the button is clicked - the open class is toggled (added/removed) */
+        .open {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .open a {
+            display: block;
+        }
+
+        .open h1{
+            display: none;
+        }
+
+
 }
-
-
   

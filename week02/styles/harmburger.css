@@ -41,7 +41,8 @@ nav {
 }
 
 #menu.open::before {
-	content: "CLOSE";
+	content: "X";
+	color: #bbb;
 }
 
 .navigation {

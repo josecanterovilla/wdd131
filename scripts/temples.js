@@ -22,8 +22,10 @@ document.getElementById('lastModified').textContent = formatDate(new Date(docume
 
 const hamButton = document.querySelector('#menu');
 const navigation = document.querySelector('.navigation');
+const headerhtml = document.querySelector('.headerhtml');
 
 hamButton.addEventListener('click', () => {
 	navigation.classList.toggle('open');
 	hamButton.classList.toggle('open');
+    headerhtml.classList.toggle('open');
 });

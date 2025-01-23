@@ -119,20 +119,16 @@ footer p{
     font-size: 14px;
 }
 
-
-
-
-
     /* Media query for tablets (768px and above) */
 @media (min-width: 768px) {
     .container {
-          grid-template-columns: 1fr 1fr; /* Two equal columns */
+          grid-template-columns: 1fr 1fr; 
     }
 }
   
       /* Media query for desktops (1024px and above) */
 @media (min-width: 1024px) {
     .container {
-        grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }

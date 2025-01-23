@@ -7,7 +7,7 @@
         .container {
             grid-template-columns: 1fr 1fr;
         }
-        main {
+        header {
             display: grid;
             grid-template-columns: 2fr 1fr;
         }
@@ -82,7 +82,7 @@
         .container {
             grid-template-columns: 1fr;
         }
-        main {
+        header {
             display: grid;
             grid-template-columns: 2fr 1fr;
         }

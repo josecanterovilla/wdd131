@@ -7,6 +7,10 @@
         .container {
             grid-template-columns: 1fr 1fr;
         }
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
         /* small view navigation */
         #menu {
             font-size: 1.5rem;
@@ -26,6 +30,7 @@
             content: "☰";
 
         }
+
 
         #menu.open::before {
             content: "X";
@@ -76,6 +81,10 @@
 @media (max-width: 768px) {
         .container {
             grid-template-columns: 1fr;
+        }
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
         }
         #menu {
             font-size: 1.5rem;

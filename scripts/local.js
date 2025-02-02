@@ -1,3 +1,4 @@
+
 document.getElementById('currentyear').textContent = new Date().getFullYear();
 
 
@@ -14,3 +15,6 @@ function formatDate(date) {
     
     return date.toLocaleString('en-US', options);  
 }
+
+
+document.getElementById('lastModified').textContent = formatDate(new Date(document.lastModified));

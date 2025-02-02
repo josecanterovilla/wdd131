@@ -6,7 +6,7 @@
 }
 
 header{
-    padding: 50px;
+    padding: 25px;
     background-color: green;
     align-items: center;
     justify-content: center;
@@ -14,16 +14,30 @@ header{
     
 }
 h1{
-    font-size: 5rem;
+    font-size: 4rem;
+    font-family: Raleway, serif;
+    font-weight: 800;
+    letter-spacing: 0.3rem;
+    color: aliceblue;
 }
 
 main {
     background-color: yellowgreen;
-    padding: 500px;
+
+
+}
+
+.hero img{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 2rem;
+    display: block;
+    
+    
 }
 
 footer{
-    padding: 50px;
+    padding: 25px;
     background-color: green;
     color: aliceblue;
     font-size: larger;

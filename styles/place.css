@@ -27,10 +27,12 @@ h1{
     margin: 0 ;
     position: relative;
     overflow: hidden;
+    background-color: yellowgreen;
 }
 
 
 .background-image {
+    margin-top:20px;
     width: 100%;
     height: 100%;
 }

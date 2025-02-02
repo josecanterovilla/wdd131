@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", serif;
+}
+
+header{
+    padding: 50px;
+    background-color: green;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+h1{
+    font-size: 5rem;
+}
+
+main {
+    background-color: yellowgreen;
+    padding: 500px;
+}
+
+footer{
+    padding: 50px;
+    background-color: green;
+    color: aliceblue;
+    font-size: larger;
+    text-align: center;
+    align-content: end;
+    bottom: auto;
+}

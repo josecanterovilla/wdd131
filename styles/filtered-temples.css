@@ -1,0 +1,150 @@
+/* small view navigation */
+
+
+
+     
+@media (max-width: 1020px) {
+        .container {
+            grid-template-columns: 1fr 1fr;
+        }
+        header {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+        }
+        
+        #menu {
+            font-size: 1.5rem;
+            border: 0;
+            background: none;
+            color: #000;
+            position: absolute; 
+            top: 1rem; 
+            right: 0.5rem; 
+            
+        }
+
+        button {
+            display: block;
+        }
+        #menu::before {
+            content: "☰";
+
+        }
+
+        #menu.open::before {
+            content: "X";
+            color: #bbb;
+            font-size: 50px;
+        }
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            list-style: none;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navigation a {
+            display: none;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+        }
+        .navigation a:hover {
+            background-color: #bbb;
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* when the button is clicked - the open class is toggled (added/removed) */
+        .open {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .open a {
+            display: block;
+        }
+
+        .open h1{
+            display: none;
+        }
+
+
+
+}
+
+   
+@media (max-width: 768px) {
+        .container {
+            grid-template-columns: 1fr;
+        }
+        header {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+        }
+        #menu {
+            font-size: 1.5rem;
+            border: 0;
+            background: none;
+            color: #000;
+            position: absolute;
+            top: 1rem; 
+            right: 0.5rem; 
+            
+        }
+
+        button {
+            display: block;
+        }
+        #menu::before {
+            content: "☰";
+
+        }
+
+        #menu.open::before {
+            content: "X";
+            color: #bbb;
+            font-size: 50px;
+        }
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            list-style: none;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navigation a {
+            display: none;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+        }
+        .navigation a:hover {
+            background-color: #bbb;
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* when the button is clicked - the open class is toggled (added/removed) */
+        .open {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .open a {
+            display: block;
+        }
+
+        .open h1{
+            display: none;
+        }
+
+
+}
+  

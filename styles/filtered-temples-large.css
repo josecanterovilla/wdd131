@@ -119,19 +119,40 @@ footer p{
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 16px;
+    padding: 16px;
   }
   
   .temple-card {
+    background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 16px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .lazy-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    filter: blur(10px);
+    transition: filter 1s ease-in-out;
+  }
+  
+  .lazy-image[src] {
+    filter: blur(0);
   }
   
   .temple-card img {

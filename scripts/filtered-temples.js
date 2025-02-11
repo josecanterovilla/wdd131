@@ -104,55 +104,95 @@ const temples = [
 ];
 
 const container = document.querySelector(".container");
+let index = 0; 
 
-// Display all temples by default
-displayTemples(temples);
 
-function displayTemples(filteredTemples) {
-  container.innerHTML = ""; // Clear previous results
-  filteredTemples.forEach(temple => {
-    const templeCard = document.createElement("div");
-    templeCard.classList.add("temple-card");
+displayNextTemple(temples);
 
-    templeCard.innerHTML = `
-      <h2>${temple.templeName}</h2>
-      <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
-      <p><strong>Location:</strong> ${temple.location}</p>
-      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-      <p><strong>Area:</strong> ${temple.area} sq ft</p>
-    `;
 
-    container.appendChild(templeCard);
-  });
+function displayNextTemple(filteredTemples) {
+  if (index >= filteredTemples.length) return; 
+
+  const temple = filteredTemples[index];
+  const templeCard = document.createElement("div");
+  templeCard.classList.add("temple-card");
+
+  templeCard.innerHTML = `
+    <h2>${temple.templeName}</h2>
+    <img class="lazy-image" data-src="${temple.imageUrl}" alt="${temple.templeName}">
+    <p><strong>Location:</strong> ${temple.location}</p>
+    <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+    <p><strong>Area:</strong> ${temple.area} sq ft</p>
+  `;
+
+  container.appendChild(templeCard);
+  index++;
+
+  lazyLoadImages();
+  observeLastTemple(filteredTemples); 
 }
 
-// Event listeners for navigation items
+
+function lazyLoadImages() {
+  const images = document.querySelectorAll(".lazy-image");
+
+  const imgObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src; 
+        img.classList.remove("lazy-image");
+        observer.unobserve(img); 
+      }
+    });
+  });
+
+  images.forEach(img => imgObserver.observe(img));
+}
+
+// Detectar el último templo y cargar más cuando aparece en pantalla
+function observeLastTemple(filteredTemples) {
+  const lastTemple = document.querySelector(".container .temple-card:last-child");
+
+  if (lastTemple) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        displayNextTemple(filteredTemples); // Cargar el siguiente templo
+      }
+    }, { root: null, threshold: 0.5 });
+
+    observer.observe(lastTemple);
+  }
+}
+
+
 document.getElementById("home").addEventListener("click", () => {
-  displayTemples(temples); // Show all temples
+  resetDisplay(temples); 
 });
 
 document.getElementById("old").addEventListener("click", () => {
-  const oldTemples = temples.filter(temple => {
-    const year = new Date(temple.dedicated).getFullYear();
-    return year < 1900;
-  });
-  displayTemples(oldTemples); // Show temples built before 1900
+  const oldTemples = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
+  resetDisplay(oldTemples);
 });
 
 document.getElementById("new").addEventListener("click", () => {
-  const newTemples = temples.filter(temple => {
-    const year = new Date(temple.dedicated).getFullYear();
-    return year > 2000;
-  });
-  displayTemples(newTemples); // Show temples built after 2000
+  const newTemples = temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
+  resetDisplay(newTemples); 
 });
 
 document.getElementById("large").addEventListener("click", () => {
-  const largeTemples = temples.filter(temple => temple.area > 90000);
-  displayTemples(largeTemples); // Show temples larger than 90,000 sq ft
+  const largeTemples = temples.filter(t => t.area > 90000);
+  resetDisplay(largeTemples); 
 });
 
 document.getElementById("small").addEventListener("click", () => {
-  const smallTemples = temples.filter(temple => temple.area < 10000);
-  displayTemples(smallTemples); // Show temples smaller than 10,000 sq ft
+  const smallTemples = temples.filter(t => t.area < 10000);
+  resetDisplay(smallTemples); 
 });
+
+
+function resetDisplay(filteredTemples) {
+  container.innerHTML = "";
+  index = 0; 
+  displayNextTemple(filteredTemples); 
+}

@@ -150,14 +150,14 @@ function lazyLoadImages() {
   images.forEach(img => imgObserver.observe(img));
 }
 
-// Detectar el último templo y cargar más cuando aparece en pantalla
+
 function observeLastTemple(filteredTemples) {
   const lastTemple = document.querySelector(".container .temple-card:last-child");
 
   if (lastTemple) {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        displayNextTemple(filteredTemples); // Cargar el siguiente templo
+        displayNextTemple(filteredTemples);
       }
     }, { root: null, threshold: 0.5 });
 

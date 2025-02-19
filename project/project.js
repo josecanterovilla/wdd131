@@ -1,19 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contact-form");
+    console.log("Website Loaded");
 
-    if (form) {
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
+    // Lazy load images
+    const images = document.querySelectorAll("img");
+    images.forEach(img => {
+        img.setAttribute("loading", "lazy");
+    });
 
-            localStorage.setItem("contactName", name);
-            localStorage.setItem("contactEmail", email);
-            localStorage.setItem("contactMessage", message);
-
-            alert("Thank you for reaching out! We will get back to you soon.");
-            form.reset();
+    // Footer social media links animation
+    const socialIcons = document.querySelectorAll("footer a img");
+    socialIcons.forEach(icon => {
+        icon.addEventListener("mouseenter", () => {
+            icon.style.transform = "scale(1.2)";
+            icon.style.transition = "0.3s";
         });
-    }
+
+        icon.addEventListener("mouseleave", () => {
+            icon.style.transform = "scale(1)";
+        });
+    });
 });

@@ -3,51 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AOC Elder Care - Providing compassionate and professional home care services for seniors in Chillán, Chile.">
+    <meta name="description" content="Compassionate home care services for seniors, offering daily assistance, medication management, and more.">
     <meta name="author" content="José Cantero">
-    <title>OAC Elder Care</title>
+    <title>AOC Elder Care</title>
     <link rel="stylesheet" href="project.css">
-    <script defer src="project.js"></script>
 </head>
 <body>
-    <header>
-        <h1>AOC ELDER CARE</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <img src="logo.png" alt="AOC Elder Care Logo" class="logo">
-    </header>
 
-    <main>
-        <section class="about-us">
-            <h2>About Us</h2>
-            <p><em>At AOC Elder Care, we are dedicated to providing top-quality home care services for seniors. Our team is committed to ensuring the well-being and dignity of every elderly individual by offering personalized assistance with daily activities, companionship, and medical support.</em></p>
-            <p><em>With years of experience in senior care, we understand the importance of a compassionate approach. Our mission is to create a safe and loving environment for our clients, helping them live independently while receiving the best care possible.</em></p>
-        </section>
+<header>
+    <h1 class="logo">AOC Elder Care</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <section class="image-gallery">
-            <img src="elder-care1.jpg" alt="Elderly care support">
-            <img src="elder-care2.jpg" alt="Professional senior care">
-        </section>
+<main>
+    <!-- Logo + Intro -->
+    <section class="hero">
+        <img src="logo.png" alt="AOC Elder Care Logo">
+        <h2>Welcome to AOC Elder Care</h2>
+        <p>Providing compassionate home care for seniors with dignity and respect.</p>
+    </section>
 
-        <section class="map">
-            <h2>Our Location</h2>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31212.685820986003!2d-72.1461423!3d-36.6062611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966b6124f19d9281%3A0x12066124cfab7b5!2sChill%C3%A1n%2C%20Biob%C3%ADo%2C%20Chile!5e0!3m2!1sen!2sus!4v1708367106582!5m2!1sen!2sus" 
-                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-        </section>
-    </main>
+    <!-- About Us -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p><em>AOC Elder Care is dedicated to improving the lives of seniors through quality home care. Our team is passionate about providing compassionate assistance, ensuring comfort and dignity for every client.</em></p>
+        <p><em>We offer personalized care services tailored to meet individual needs, giving families peace of mind and seniors the support they deserve.</em></p>
+    </section>
 
-    <footer>
-        <a href="https://www.instagram.com" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-        <a href="https://www.whatsapp.com" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
-        <a href="https://www.facebook.com" target="_blank"><img src="facebook.png" alt="Facebook"></a>
-        <p>&copy; 2025 AOC Elder Care. All Rights Reserved.</p>
-    </footer>
+    <!-- Images -->
+    <section class="images">
+        <img src="elder-care-1.jpg" alt="Senior Care Service">
+        <img src="elder-care-2.jpg" alt="Compassionate Elderly Assistance">
+    </section>
+
+    <!-- Map -->
+    <section class="location">
+        <h2>Our Location</h2>
+        <iframe src="https://www.google.com/maps?q=Chillán,+Chile&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p class="footer-info">📍 Chillán, Chile</p>
+        <p class="footer-info">📞 +56964585091</p>
+        <p class="footer-info">📧 josevicente2806@gmail.com</p>
+        <div class="social-media">
+            <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="icons/whatsapp.png" alt="WhatsApp"></a>
+            <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
+        </div>
+    </div>
+    <p class="copyright">&copy; 2025 AOC Elder Care. All Rights Reserved.</p>
+</footer>
+
+<script src="project.js"></script>
 </body>
 </html>

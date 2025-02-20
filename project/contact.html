@@ -25,36 +25,34 @@
 </header>
 
 <main>
-    <section class="contact-info">
-        <h2>Contact Us</h2>
-        <img src="contact.jpg" alt="Contact AOC Elder Care">
-        <p>We are here to help! Reach out to us for any inquiries.</p>
-    </section>
-
-    <section class="contact-form">
-        <div class="contact-container">
+    <main>
+        <!-- Título e imagen FUERA del cuadro -->
+        <section class="contact-header">
             <h2>Contact Us</h2>
-            <img src="images/contact.jpg" alt="Contact Us" class="contact-image">
-            
+            <img src="call-contact.png" alt="Contact Us" class="contact-image">
+        </section>
+    
+        <!-- Formulario DENTRO del cuadro -->
+        <section class="contact-container">
             <form id="contactForm">
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
-        
+    
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-        
+    
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" required>
-        
+    
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
-        
+    
                 <button type="submit">Send Message</button>
                 <p id="confirmationMessage" class="hidden">Message sent successfully!</p>
             </form>
-        </div>
-        
-    </section>
+        </section>
+    </main>
+    
 </main>
 
 <footer>
@@ -78,7 +76,7 @@
             </a>
         </div>
     </div>
-    s="copyright">&copy; 2025 AOC Elder Care. All Rights Reserved.</p>
+    <p class="copyright">&copy; 2025 AOC Elder Care | All Rights Reserved |</p>
 </footer>
 
 <script src="project.js"></script>

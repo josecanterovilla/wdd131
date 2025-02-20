@@ -136,9 +136,9 @@ body {
 
   footer {
     text-align: center;
-    padding: 1rem;
+    padding: 0.2rem;
     background-color: #00796b; 
     color: #fff;
-    margin-top: 1rem;
-    border-top: 4px solid #004d40; 
+    margin-top: 0.1rem;
+    border-top: 2px solid #004d40; 
   }

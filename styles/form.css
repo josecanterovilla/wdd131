@@ -32,7 +32,9 @@ body {
     font-weight: bold;
   }
   
+ 
   input, select, textarea, fieldset {
+    box-sizing: border-box; 
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 1rem;

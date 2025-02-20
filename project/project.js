@@ -23,29 +23,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.getElementById("contactForm").addEventListener("submit", async function(event) {
+document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
-    let form = event.target;
-    let formMessage = document.getElementById("formMessage");
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
 
-    try {
-        let response = await fetch(form.action, {
+    if (name && email && phone && message) {
+   
+        let formData = {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message
+        };
+
+      
+        fetch("https://formsubmit.co/ajax/oacanterov@gmail.com", {
             method: "POST",
-            body: new FormData(form),
-            headers: { "Accept": "application/json" }
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById("confirmationMessage").classList.remove("hidden");
+                document.getElementById("confirmationMessage").innerText = "Message sent successfully!";
+                document.getElementById("contactForm").reset();
+            } else {
+                alert("Error sending message. Please try again.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred. Please try again later.");
         });
-
-        if (response.ok) {
-            formMessage.textContent = "✔ Message sent successfully!";
-            formMessage.classList.remove("hidden");
-            form.reset();
-        } else {
-            formMessage.textContent = "❌ Error sending message. Try again.";
-            formMessage.classList.remove("hidden");
-        }
-    } catch (error) {
-        formMessage.textContent = "❌ Connection error. Try again.";
-        formMessage.classList.remove("hidden");
+    } else {
+        alert("Please fill out all fields.");
     }
 });

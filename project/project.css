@@ -145,67 +145,51 @@ footer {
     font-size: 12px;
 }
 
-/* Contact Page */
-.contact-info {
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
     text-align: center;
-    padding: 30px;
 }
 
-.contact-info img {
+.contact-image {
     width: 100%;
-    max-height: 300px;
-    object-fit: cover;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-.contact-form {
-    width: 50%;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form form {
+form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.contact-form label {
-    font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
+input, textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.contact-form button {
-    background-color: #2C3E50;
+button {
+    background: #007bff;
     color: white;
     padding: 10px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.contact-form button:hover {
-    background-color: #f39c12;
+button:hover {
+    background: #0056b3;
 }
 
 .hidden {
     display: none;
     color: green;
     font-weight: bold;
-    margin-top: 10px;
-    text-align: center;
 }
+
 
 
 .services-container {

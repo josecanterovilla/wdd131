@@ -1,4 +1,26 @@
-// Product Array
+
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+
+
+function formatDate(date) {
+    const options = {
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,  
+    };
+    
+    return date.toLocaleString('en-US', options);  
+}
+
+
+document.getElementById('lastModified').textContent = formatDate(new Date(document.lastModified));
+
+
+
 const products = [
     { id: "fc-1888", name: "flux capacitor", averagerating: 4.5 },
     { id: "fc-2050", name: "power laces", averagerating: 4.7 },

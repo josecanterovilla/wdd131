@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Services page loaded");
 
-    // Lazy load images
+   
     const images = document.querySelectorAll("img");
     images.forEach(img => {
         img.setAttribute("loading", "lazy");
     });
 
-    // Service hover effect
+ 
     const serviceItems = document.querySelectorAll(".service-item");
     serviceItems.forEach(item => {
         item.addEventListener("mouseenter", () => {
@@ -26,41 +26,55 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let message = document.getElementById("message").value;
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let message = document.getElementById("message").value.trim();
+    let confirmationMessage = document.getElementById("confirmationMessage");
 
-    if (name && email && phone && message) {
    
-        let formData = {
-            name: name,
-            email: email,
-            phone: phone,
-            message: message
-        };
-
-      
-        fetch("https://formsubmit.co/ajax/oacanterov@gmail.com", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                document.getElementById("confirmationMessage").classList.remove("hidden");
-                document.getElementById("confirmationMessage").innerText = "Message sent successfully!";
-                document.getElementById("contactForm").reset();
-            } else {
-                alert("Error sending message. Please try again.");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("An error occurred. Please try again later.");
-        });
-    } else {
-        alert("Please fill out all fields.");
+    if (name === "" || email === "" || phone === "" || message === "") {
+        confirmationMessage.innerText = "Please fill out all fields.";
+        confirmationMessage.style.color = "red";
+        confirmationMessage.classList.remove("hidden");
+        return;
     }
+
+    let formData = {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message
+    };
+
+    
+    fetch("https://formsubmit.co/ajax/oacanterov@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            confirmationMessage.innerText = "Message sent successfully!";
+            confirmationMessage.style.color = "green";
+            confirmationMessage.classList.remove("hidden");
+
+            
+            setTimeout(() => {
+                document.getElementById("contactForm").reset();
+                confirmationMessage.classList.add("hidden");
+            }, 3000);
+        } else {
+            confirmationMessage.innerText = "Error sending message. Try again.";
+            confirmationMessage.style.color = "red";
+            confirmationMessage.classList.remove("hidden");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        confirmationMessage.innerText = "An error occurred. Please try again later.";
+        confirmationMessage.style.color = "red";
+        confirmationMessage.classList.remove("hidden");
+    });
 });

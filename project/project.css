@@ -21,9 +21,19 @@ header {
     padding: 15px 20px;
 }
 
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    width: 60px; 
+    height: 60px;
+    border-radius: 10%; 
+    object-fit: cover;
 }
 
 nav ul {
@@ -145,6 +155,17 @@ footer {
     font-size: 12px;
 }
 
+.footer-link {
+    color: white;  
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+.footer-link:hover {
+    text-decoration: underline; 
+}
+
+
 .contact-container {
     max-width: 600px;
     margin: auto;
@@ -213,4 +234,31 @@ button:hover {
 .service-card:hover {
     transform: scale(1.05);
     background: #e3f2fd;
+}
+
+
+.services-section {
+    position: relative;
+    background: url('care-hands.webp') no-repeat center center/cover;
+    color: rgb(22, 22, 22);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Capa oscura para mejorar la visibilidad del texto */
+}
+
+.services-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }

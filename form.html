@@ -22,11 +22,13 @@
       <!-- Overall Rating -->
       <fieldset>
         <legend>Overall Rating:</legend>
-        <label><input type="radio" name="rating" value="1" required> 1 ☆</label>
-        <label><input type="radio" name="rating" value="2"> 2 ☆☆</label>
-        <label><input type="radio" name="rating" value="3"> 3 ☆☆☆</label>
-        <label><input type="radio" name="rating" value="4"> 4 ☆☆☆☆</label>
-        <label><input type="radio" name="rating" value="5"> 5 ☆☆☆☆☆</label>
+        <div class="rating">
+          <label><input type="radio" name="rating" value="1" required><span>1</span></label>
+          <label><input type="radio" name="rating" value="2"><span>2</span></label>
+          <label><input type="radio" name="rating" value="3"><span>3</span></label>
+          <label><input type="radio" name="rating" value="4"><span>4</span></label>
+          <label><input type="radio" name="rating" value="5"><span>5</span></label>
+        </div>
       </fieldset>
 
       <!-- Date of Installation -->
@@ -36,10 +38,12 @@
       <!-- Useful Features -->
       <fieldset>
         <legend>Useful Features:</legend>
-        <label><input type="checkbox" name="features" value="durability"> Durability</label>
-        <label><input type="checkbox" name="features" value="ease-of-use"> Ease of Use</label>
-        <label><input type="checkbox" name="features" value="performance"> Performance</label>
-        <label><input type="checkbox" name="features" value="design"> Design</label>
+        <div class="features">
+          <label><input type="checkbox" name="features" value="durability"> Durability</label>
+          <label><input type="checkbox" name="features" value="ease-of-use"> Ease of Use</label>
+          <label><input type="checkbox" name="features" value="performance"> Performance</label>
+          <label><input type="checkbox" name="features" value="design"> Design</label>
+        </div>
       </fieldset>
 
       <!-- Written Review -->
@@ -55,8 +59,9 @@
     </form>
   </main>
   <footer>
-    <p>&copy; 2025 Product Reviews - José Cantero</p>
+    <p>&copy; 2025 Product Reviews | José Cantero | Chile </p>
+    <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
-  <script src="/scripts/form.js" defer></script>
+  <script src="scripts/form.js" defer></script>
 </body>
 </html>

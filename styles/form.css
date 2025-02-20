@@ -140,10 +140,10 @@ body {
   
   footer {
     text-align: center;
-    padding: 1.5rem;
+    padding: 0.2rem;
     background-color: #00796b;
     color: #fff;
-    margin-top: 2rem;
-    border-top: 4px solid #004d40;
+    margin-top: 0.2rem;
+    border-top: 2px solid #004d40;
     font-family: 'Roboto Condensed', sans-serif;
   }

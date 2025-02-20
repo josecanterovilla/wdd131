@@ -1,11 +1,15 @@
-
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e0f7fa; 
+    background-color: #e0f7fa;
     color: #333;
     line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
   }
   
   header {
@@ -13,7 +17,7 @@ body {
     color: #fff;
     padding: 1.5rem;
     text-align: center;
-    border-bottom: 4px solid #004d40; 
+    border-bottom: 4px solid #004d40;
   }
   
   main {
@@ -22,9 +26,8 @@ body {
     margin: 0 auto;
   }
   
-  
   form {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -41,21 +44,21 @@ body {
     box-sizing: border-box;
     width: 100%;
     padding: 0.75rem;
-    margin-bottom: 1rem; 
-    border: 1px solid #b2dfdb; 
+    margin-bottom: 1rem;
+    border: 1px solid #b2dfdb;
     border-radius: 6px;
     font-size: 1rem;
     color: #333;
     background-color: #f0f8ff;
+    font-family: 'Raleway', sans-serif;
   }
   
   input:focus, select:focus, textarea:focus {
-    border-color: #00796b; 
+    border-color: #00796b;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
   }
   
-
   fieldset {
     border: none;
     padding: 0;
@@ -66,6 +69,7 @@ body {
     font-weight: bold;
     color: #00796b;
     margin-bottom: 0.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
   }
   
   .rating {
@@ -83,7 +87,7 @@ body {
   }
   
   .rating input[type="radio"] {
-    display: none; 
+    display: none;
   }
   
   .rating input[type="radio"] + span::before {
@@ -94,9 +98,8 @@ body {
   
   .rating input[type="radio"]:checked + span::before {
     content: "★";
-    color: #000; 
+    color: #000;
   }
-  
   
   .features {
     display: flex;
@@ -110,16 +113,16 @@ body {
     gap: 0.5rem;
     font-weight: normal;
     margin-bottom: 0;
+    font-family: 'Raleway', sans-serif;
   }
   
   .features input[type="checkbox"] {
-    width: auto; 
-    margin: 0; 
+    width: auto;
+    margin: 0;
   }
   
- 
   input[type="submit"] {
-    background-color: #00796b; 
+    background-color: #00796b;
     color: #fff;
     border: none;
     padding: 1rem;
@@ -127,18 +130,20 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
   }
   
   input[type="submit"]:hover {
-    background-color: #004d40; 
+    background-color: #004d40;
   }
   
-
   footer {
     text-align: center;
-    padding: 0.2rem;
-    background-color: #00796b; 
+    padding: 1.5rem;
+    background-color: #00796b;
     color: #fff;
-    margin-top: 0.1rem;
-    border-top: 2px solid #004d40; 
+    margin-top: 2rem;
+    border-top: 4px solid #004d40;
+    font-family: 'Roboto Condensed', sans-serif;
   }

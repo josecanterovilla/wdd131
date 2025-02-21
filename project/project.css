@@ -19,7 +19,7 @@ body {
 }
 
 main {
-    flex: 1; /* 🔹 Esto hace que main ocupe el espacio disponible */
+    flex: 1; 
 }
 
 /* HEADER */

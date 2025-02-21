@@ -39,52 +39,70 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     });
 });
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); 
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("contactForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
 
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let message = document.getElementById("message").value.trim();
-    let confirmationMessage = document.getElementById("confirmationMessage");
-    let submitButton = document.querySelector("button[type='submit']");
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let message = document.getElementById("message").value.trim();
+        let submitButton = document.querySelector("button[type='submit']");
 
-    if (!name || !email || !phone || !message) {
-        confirmationMessage.innerText = "⚠️ Please fill out all fields.";
-        confirmationMessage.style.color = "red";
-        confirmationMessage.classList.remove("hidden");
-        return;
-    }
+        if (!name || !email || !phone || !message) {
+            showPopup("⚠️ Please fill out all fields.", "red");
+            return;
+        }
 
-    let formData = {
-        name: name,
-        email: email,
-        phone: phone,
-        message: message
-    };
+        submitButton.innerText = "Sending...";
+        submitButton.disabled = true;
 
-    submitButton.innerText = "Sending...";
-    submitButton.disabled = true;
+        let formData = { name, email, phone, message };
 
-    confirmationMessage.innerText = "✅ Message sent successfully!";
-    confirmationMessage.style.color = "green";
-    confirmationMessage.classList.remove("hidden");
+        try {
+            let response = await fetch("https://formsubmit.co/ajax/oacanterov@gmail.com", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
 
-    fetch("https://formsubmit.co/ajax/oacanterov@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-    }).catch(error => {
-        console.error("Error:", error);
-        confirmationMessage.innerText = "❌ Error sending message. Try again.";
-        confirmationMessage.style.color = "red";
+            if (!response.ok) throw new Error("Failed to send message.");
+
+            document.getElementById("contactForm").reset();
+            showPopup("✅ Message sent successfully!", "green");
+
+        } catch (error) {
+            console.error("Error:", error);
+            showPopup("❌ Error sending message. Please try again.", "red");
+        }
+
+        setTimeout(() => {
+            submitButton.innerText = "Send Message";
+            submitButton.disabled = false;
+        }, 3000);
     });
 
-    document.getElementById("contactForm").reset();
+    function showPopup(message, color) {
+        let popup = document.createElement("div");
+        popup.innerText = message;
+        popup.style.position = "fixed";
+        popup.style.top = "50%";
+        popup.style.left = "50%";
+        popup.style.transform = "translate(-50%, -50%)";
+        popup.style.padding = "15px 20px";
+        popup.style.backgroundColor = color;
+        popup.style.color = "white";
+        popup.style.fontSize = "16px";
+        popup.style.borderRadius = "8px";
+        popup.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
+        popup.style.zIndex = "1000";
+        popup.style.textAlign = "center";
 
-    setTimeout(() => {
-        submitButton.innerText = "Send Message";
-        submitButton.disabled = false;
-        confirmationMessage.classList.add("hidden");
-    }, 3000);
+        document.body.appendChild(popup);
+
+        setTimeout(() => {
+            popup.remove();
+        }, 3000);
+    }
 });
+

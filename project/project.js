@@ -82,5 +82,19 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
 
 function toggleMenu() {
-    document.querySelector(".nav-links").classList.toggle("active");
+    const menu = document.querySelector(".nav-links");
+    const menuIcon = document.querySelector(".menu-icon");
+
+    menu.classList.toggle("active");
+
+    // Cambia el ícono ☰ por una "X"
+    menuIcon.innerHTML = menu.classList.contains("active") ? "✖" : "☰";
 }
+
+// Cerrar el menú cuando se hace clic en un enlace
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.querySelector(".nav-links").classList.remove("active");
+        document.querySelector(".menu-icon").innerHTML = "☰"; // Restaurar el ícono
+    });
+});

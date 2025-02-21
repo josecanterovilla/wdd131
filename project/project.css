@@ -43,10 +43,12 @@ header {
 }
 
 /* NAVIGATION MENU */
-nav {
+.nav {
+    display: none;
+}
+.nav.active {
     display: flex;
 }
-
 /* NAV LINKS */
 .nav-links {
     list-style: none;
@@ -75,7 +77,6 @@ nav {
     border: none;
     color: white;
 }
-
 /* Hero Section */
 .hero {
     text-align: center;
@@ -370,17 +371,23 @@ button:hover {
 
 
 /* RESPONSIVE */
+/* NAV PARA MÓVILES */
 @media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Hace visible el ícono */
+    }
+
     .nav-links {
         display: none; /* Oculta menú en móviles */
         flex-direction: column;
         position: absolute;
-        top: 70px;
-        right: 0;
-        background-color: #2C3E50;
+        top: 100%; /* Pegado al header */
+        left: 0;
         width: 100%;
+        background-color: #2C3E50;
         text-align: center;
         padding: 10px 0;
+        z-index: 1000; /* Sobre el contenido */
     }
 
     .nav-links.active {
@@ -389,24 +396,5 @@ button:hover {
 
     .nav-links li {
         padding: 15px;
-    }
-
-    .menu-icon {
-        display: block; /* Hace visible el ícono */
-    }
-
-
-    /* Ajuste de Footer */
-    .footer-content {
-        flex-direction: column;
-        gap: 5px;
-        text-align: center;
-    }
-
-    .map-container iframe {
-        width: 90%;
-        height: 350px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     }
 }

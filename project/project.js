@@ -81,11 +81,6 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const menuIcon = document.querySelector(".menu-icon");
-    const navLinks = document.querySelector(".nav-links");
-
-    menuIcon.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-    });
-});
+function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
+}

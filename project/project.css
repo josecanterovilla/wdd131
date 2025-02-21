@@ -6,7 +6,6 @@
     font-family: Arial, sans-serif;
 }
 
-
 body {
     display: flex;
     flex-direction: column;
@@ -14,67 +13,68 @@ body {
     margin: 0;
 }
 
-
 main {
     flex: 1;
 }
 
-/* Header */
+/* HEADER */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #2C3E50;
     color: white;
-    padding: 15px 20px;
+    padding: 15px 30px;
+    position: relative;
 }
 
-/* logo*/
+/* LOGO */
 .logo-title {
     display: flex;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
 }
 
-
 .logo {
-    width: 60px; 
+    width: 60px;
     height: 60px;
-    border-radius: 10%; 
+    border-radius: 10%;
     object-fit: cover;
 }
 
-/* Navbar styles */
+/* NAVIGATION MENU */
 nav {
-    padding: 20px 0;
-    text-align: center;
-}
-
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px; 
 }
 
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
 
-nav ul li a {
+.nav-links li a {
     text-decoration: none;
-    color: white; 
-    font-size: 36px; 
+    color: white;
+    font-size: 20px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-
-nav ul li a:hover {
-    color: #f4b400; 
+.nav-links li a:hover {
+    color: #f4b400;
 }
 
+/* 🔹 MENÚ HAMBURGUESA (MÓVILES) */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
 
 /* Hero Section */
 .hero {
@@ -139,7 +139,7 @@ footer {
     background-color: #2C3E50;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,8 +147,12 @@ footer {
 
 .footer-content {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     font-size: 14px;
+    max-width: 90%;
+    text-align: center;
 }
 
 .footer-info {
@@ -158,6 +162,7 @@ footer {
 .social-media {
     display: flex;
     gap: 10px;
+    justify-content: center;
 }
 
 .social-media img {
@@ -175,18 +180,16 @@ footer {
 }
 
 .footer-link {
-    color: white;  
+    color: white;
     text-decoration: none;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .footer-link:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 /* CONTACT PAGE */
-
-/* Sección del título e imagen (fuera del cuadro) */
 .contact-header {
     text-align: center;
     margin-bottom: 20px;
@@ -199,16 +202,14 @@ footer {
     margin-bottom: 15px;
 }
 
-/* Imagen más pequeña y centrada */
 .contact-image {
-    width: 20%; /* Reducido del 60% al 40% */
-    max-height: 180px; /* Altura reducida */
+    width: 20%;
+    max-height: 180px;
     border-radius: 10px;
     display: block;
     margin: 0 auto 20px;
 }
 
-/* Contenedor del formulario (dentro del cuadro) */
 .contact-container {
     max-width: 600px;
     margin: auto;
@@ -225,7 +226,6 @@ form {
     gap: 15px;
 }
 
-/* Estilo de los inputs y textarea */
 input, textarea {
     width: 100%;
     padding: 12px;
@@ -236,7 +236,6 @@ input, textarea {
     transition: 0.3s;
 }
 
-/* Efecto cuando el usuario hace clic en un campo */
 input:focus, textarea:focus {
     border-color: #004d99;
     box-shadow: 0 0 5px rgba(0, 77, 153, 0.5);
@@ -254,7 +253,6 @@ button {
     transition: 0.3s;
 }
 
-/* Efecto hover en el botón */
 button:hover {
     background: #003366;
 }
@@ -268,9 +266,7 @@ button:hover {
     margin-top: 15px;
 }
 
-
-
-/* SERVICES PAGE   */
+/* SERVICES PAGE */
 .services-section {
     position: relative;
     background: url('care-hands.webp') no-repeat center center/cover;
@@ -286,7 +282,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .services-container {
@@ -305,7 +301,7 @@ button:hover {
 
 .service-card {
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    backdrop-filter: blur(5px);
     border-radius: 10px;
     padding: 20px;
     transition: transform 0.3s ease-in-out;
@@ -321,8 +317,6 @@ button:hover {
 }
 
 /* HOME */
-
-/* Estilos generales para la sección Home */
 .home-section {
     text-align: center;
     padding: 50px 20px;
@@ -341,7 +335,7 @@ button:hover {
     line-height: 1.6;
 }
 
-/* Estilos para las imágenes */
+/* Imágenes */
 .home-image {
     width: 100%;
     max-width: 800px;
@@ -351,7 +345,7 @@ button:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para la sección "About Us" */
+/* About Us */
 .about-container {
     background: rgba(255, 255, 255, 0.9);
     padding: 25px;
@@ -361,67 +355,51 @@ button:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para el mapa */
+/* Mapa */
 .map-container {
     text-align: center;
     margin-top: 30px;
 }
 
 .map-container iframe {
-    width: 80%;
-    height: 450px;
+    width: 50%;
+    height: 350px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    /* Menú hamburguesa en móviles */
-    .menu-icon {
-        display: block;
-    }
-
     .nav-links {
-        display: none;
+        display: none; /* Oculta menú en móviles */
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        left: 0;
+        top: 70px;
+        right: 0;
+        background-color: #2C3E50;
         width: 100%;
-        background: #2C3E50;
         text-align: center;
+        padding: 10px 0;
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Muestra menú cuando se activa */
     }
 
     .nav-links li {
-        padding: 15px 0;
-    }
-
-    .nav-links li a {
-        font-size: 24px;
-    }
-
-    /* Ajustes de imágenes y texto */
-    .hero h2, .about p, .services-container h2 {
-        font-size: 22px;
-        padding: 10px;
-    }
-
-    .hero img, .home-image {
-        width: 90%;
-    }
-
-    .about-container, .contact-container {
         padding: 15px;
     }
 
-    /* Ajuste del footer */
+    .menu-icon {
+        display: block; /* Hace visible el ícono */
+    }
+}
+
+    /* Ajuste de Footer */
     .footer-content {
         flex-direction: column;
+        gap: 5px;
         text-align: center;
     }
 }

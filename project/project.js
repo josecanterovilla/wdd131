@@ -31,8 +31,8 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     let phone = document.getElementById("phone").value.trim();
     let message = document.getElementById("message").value.trim();
     let confirmationMessage = document.getElementById("confirmationMessage");
+    let submitButton = document.querySelector("button[type='submit']");
 
-   
     if (name === "" || email === "" || phone === "" || message === "") {
         confirmationMessage.innerText = "Please fill out all fields.";
         confirmationMessage.style.color = "red";
@@ -47,10 +47,16 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         message: message
     };
 
-    
+    // Cambia el texto del botón mientras se envía el mensaje
+    submitButton.innerText = "Sending...";
+    submitButton.disabled = true;
+
     fetch("https://formsubmit.co/ajax/oacanterov@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
         body: JSON.stringify(formData)
     })
     .then(response => response.json())
@@ -60,7 +66,6 @@ document.getElementById("contactForm").addEventListener("submit", function(event
             confirmationMessage.style.color = "green";
             confirmationMessage.classList.remove("hidden");
 
-            
             setTimeout(() => {
                 document.getElementById("contactForm").reset();
                 confirmationMessage.classList.add("hidden");
@@ -76,6 +81,11 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         confirmationMessage.innerText = "An error occurred. Please try again later.";
         confirmationMessage.style.color = "red";
         confirmationMessage.classList.remove("hidden");
+    })
+    .finally(() => {
+        // Restaurar el botón después del envío
+        submitButton.innerText = "Send Message";
+        submitButton.disabled = false;
     });
 });
 
